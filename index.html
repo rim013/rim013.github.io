@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rimsha Imtiaz - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f7f7f7;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #2E3192, #1BFFFF);
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    header h1 { font-size: 2.8rem; margin: 0; }
+    header p { font-size: 1.2rem; margin: 10px 0; }
+    .resume-btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: #fff;
+      color: #2E3192;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .resume-btn:hover { background: #f0f0f0; }
+    nav {
+      background: #222;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    section { padding: 60px 20px; max-width: 1100px; margin: auto; }
+    h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; color: #2E3192; }
+    .services, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: transform 0.2s;
+    }
+    .card:hover { transform: translateY(-5px); }
+    .card h3 { margin-top: 0; color: #2E3192; }
+    .two-col {
+      display: flex;
+      gap: 30px;
+      align-items: stretch;
+      flex-wrap: wrap;
+    }
+    .experience-box, .contact-box {
+      flex: 1;
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .experience-box h3, .contact-box h3 { color: #2E3192; margin-top: 0; }
+    .experience-box ul { list-style: none; padding: 0; }
+    .experience-box ul li { margin: 12px 0; line-height: 1.6; }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: 'Poppins', sans-serif;
+    }
+    form button {
+      background: #2E3192;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    form button:hover { background: #1B4FA5; }
+    footer {
+      background: #2E3192;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    footer a { color: #1BFFFF; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Rimsha Imtiaz</h1>
+    <p>Designer | Developer | Writer | QA Specialist</p>
+    <p>Email: <a href="mailto:rimsha.imtiaz12@gmail.com" style="color:#fff;">rimsha.imtiaz12@gmail.com</a> | 
+    <a href="https://www.linkedin.com/in/rimsha-imtiaz-ab56b9243/" target="_blank" style="color:#fff;">LinkedIn</a></p>
+    <a href="resume.pdf" target="_blank" class="resume-btn">📄 View Resume</a>
+  </header>
+
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="services">
+    <h2>My Services & Expertise</h2>
+    <div class="services">
+      <div class="card"><h3>🎨 Canva Design</h3><p>Logos, social media posts, and creative graphics.</p></div>
+      <div class="card"><h3>✍ Freelance Writing</h3><p>Stories, blogs, and web content with engaging style.</p></div>
+      <div class="card"><h3>🌐 WordPress Development</h3><p>Professional websites with custom functionality.</p></div>
+      <div class="card"><h3>🛒 Shopify Development</h3><p>Custom eCommerce solutions with Shopify stores.</p></div>
+      <div class="card"><h3>💻 Custom Development</h3><p>HTML, CSS, and PHP basics for tailored solutions.</p></div>
+      <div class="card"><h3>🔍 QA (Manual)</h3><p>Ensuring flawless websites through manual testing.</p></div>
+      <div class="card"><h3>👩‍💼 Management</h3><p>2 years of experience in HR & managerial roles: handling client coordination, interviews, scheduling, and issue resolution.</p></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <div class="projects">
+      <div class="card"><h3>Shopify – Ralphies Funhouse</h3><a href="https://ralphiesfunhouse.com/" target="_blank">Visit Site</a></div>
+      <div class="card"><h3>Shopify – Wise Guys Vapes</h3><a href="https://wiseguysvapes.myshopify.com/" target="_blank">Visit Site</a></div>
+      <div class="card"><h3>Shopify – Kesy Baby</h3><a href="https://kesybaby.com/" target="_blank">Visit Site</a></div>
+      <div class="card"><h3>Shopify – Smile Kit</h3><a href="https://smilekit.dk/" target="_blank">Visit Site</a></div>
+      <div class="card"><h3>WordPress – Asaro Firm</h3><a href="https://asarofirm.com/" target="_blank">Visit Site</a></div>
+      <div class="card"><h3>WordPress – The Bizz Advisors</h3><a href="https://thebizzadvisors.com/" target="_blank">Visit Site</a></div>
+      <div class="card"><h3>WordPress – Smarter Home</h3><a href="https://smarterhome.ai/" target="_blank">Visit Site</a></div>
+      <div class="card"><h3>NGO – Al Khair</h3><a href="https://al-khair.org/" target="_blank">Visit Site</a></div>
+      <div class="card"><h3>WIX – CSI3000</h3><a href="https://rrive39.wixsite.com/csi3000" target="_blank">Visit Site</a></div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience & Contact</h2>
+    <div class="two-col">
+      <div class="experience-box">
+        <h3>💼 Professional Experience</h3>
+        <ul>
+          <li><strong>Web Development & Design:</strong> 5 years of experience building and customizing websites (WordPress, Shopify, WIX, HTML/CSS/JS).</li>
+          <li><strong>Creative Designing:</strong> Canva expert for logos, branding, and social media designs.</li>
+          <li><strong>Freelance Writing:</strong> Blogs, stories, and engaging web content.</li>
+          <li><strong>Quality Assurance:</strong> Manual QA to deliver bug-free and high-quality websites.</li>
+          <li><strong>Management & HR:</strong> 2 years of experience in HR and managerial roles — managing emails, scheduling meetings, interviewing candidates, and resolving client/employee issues.</li>
+        </ul>
+      </div>
+
+      <div class="contact-box" id="contact">
+        <h3>📬 Contact Me</h3>
+        <form action="https://formspree.io/f/mzzbjjgn" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="tel" name="phone" placeholder="Your Phone Number">
+          <textarea name="message" rows="4" placeholder="Reason for contacting..." required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Rimsha Imtiaz | Portfolio</p>
+  </footer>
+
+</body>
+</html>
