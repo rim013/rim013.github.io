@@ -108,52 +108,72 @@
   </style>
 </head>
 <body>
-<div id="lockscreen" style="
-  position:fixed; top:0; left:0; width:100%; height:100%; 
-  background: linear-gradient(135deg, #1f1c2c, #928dab);
-  color:#fff; display:flex; align-items:center; justify-content:center; 
-  flex-direction:column; z-index:9999; font-family:sans-serif;
-  animation: fadeIn 1.2s ease-in-out;
-">
-  <div style="background: rgba(0,0,0,0.6); padding:40px; border-radius:15px; text-align:center; box-shadow: 0px 0px 20px rgba(0,0,0,0.5);">
-    <h2 style="margin-bottom:15px; font-size:26px;">🔒 Secure Portfolio</h2>
-    <p style="margin-bottom:20px;">Enter password to continue</p>
-    <input type="password" id="portfolioPassword" placeholder="Password" 
-      style="padding:12px; margin-bottom:15px; border-radius:8px; border:none; width:220px; text-align:center;">
-    <br>
-    <button onclick="checkPassword()" style="
-      padding:12px 25px; border:none; border-radius:8px; 
-      background:#4CAF50; color:white; font-size:16px; cursor:pointer; 
-      transition: all 0.3s ease;">
-      Unlock
-    </button>
-    <p id="errorMsg" style="color:#ff6666; margin-top:15px; display:none;">❌ Wrong password</p>
+<body>
+  <!-- START: Stylish Lockscreen (paste this immediately after <body>) -->
+  <div id="lockscreen" style="
+    position:fixed; top:0; left:0; width:100%; height:100%;
+    background: radial-gradient(circle at 10% 20%, rgba(255,255,255,0.03), transparent 10%),
+                linear-gradient(135deg,#1f1c2c,#928dab);
+    color:#fff; display:flex; align-items:center; justify-content:center;
+    flex-direction:column; z-index:99999; font-family:'Poppins',sans-serif;
+    animation: fadeIn 0.9s ease-in-out;
+  ">
+    <div style="background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.45));
+                padding:44px; border-radius:16px; text-align:center;
+                box-shadow: 0 12px 40px rgba(0,0,0,0.6); max-width:360px; width:90%;">
+      <div style="font-size:44px; line-height:1;">🔒</div>
+      <h2 style="margin:12px 0 6px; font-size:22px;">Secure Portfolio</h2>
+      <p style="margin:0 0 18px; opacity:0.9;">Enter the password to continue</p>
+
+      <input id="portfolioPassword" type="password" placeholder="Password"
+        style="padding:12px 14px; margin-bottom:14px; border-radius:10px; border:1px solid rgba(255,255,255,0.08);
+               width:100%; box-sizing:border-box; text-align:center; background:rgba(255,255,255,0.02); color:#fff;">
+
+      <button id="unlockBtn" style="width:100%; padding:12px; border-radius:10px; border:none;
+               background:linear-gradient(90deg,#3CCF8E,#1B9BFF); color:#fff; font-weight:600; cursor:pointer;">
+        Unlock
+      </button>
+
+      <p id="errorMsg" style="color:#ff8080; margin-top:12px; display:none;">❌ Wrong password — try again</p>
+      <p style="font-size:12px; opacity:0.7; margin-top:14px;">(Contact owner to get the password)</p>
+    </div>
   </div>
-</div>
 
-<style>
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-button:hover {
-  background:#45a049 !important;
-}
-</style>
+  <style>
+    @keyframes fadeIn { from {opacity:0; transform: translateY(6px);} to {opacity:1; transform:none;} }
+    /* prevent scrolling while locked */
+    body.locked { overflow: hidden; height: 100vh; }
+  </style>
 
-<script>
-  // Change this password
-  const correctPassword = "rimsha123";
+  <script>
+    // CHANGE THIS to any password you want
+    const correctPassword = "rimsha123";
 
-  function checkPassword() {
-    const userPass = document.getElementById("portfolioPassword").value;
-    if (userPass === correctPassword) {
-      document.getElementById("lockscreen").style.display = "none";
-    } else {
-      document.getElementById("errorMsg").style.display = "block";
+    // keep focus on input when shown
+    document.addEventListener("DOMContentLoaded", function() {
+      document.body.classList.add('locked');
+      const input = document.getElementById('portfolioPassword');
+      input.focus();
+      // enter key support
+      input.addEventListener('keydown', function(e){
+        if(e.key === 'Enter') checkPassword();
+      });
+      document.getElementById('unlockBtn').addEventListener('click', checkPassword);
+    });
+
+    function checkPassword() {
+      const userPass = document.getElementById('portfolioPassword').value;
+      const error = document.getElementById('errorMsg');
+      if (userPass === correctPassword) {
+        document.getElementById('lockscreen').style.display = 'none';
+        document.body.classList.remove('locked');
+      } else {
+        error.style.display = 'block';
+      }
     }
-  }
-</script>
+  </script>
+  <!-- END: Lockscreen -->
+
 
   <header>
     <h1>Rimsha Imtiaz</h1>
